@@ -4,47 +4,102 @@
 
 function objectValues(object) {
     // code
-} 
+
+//Lets create an empty array to hold the values
+var values = [];
+  
+//Now use a for-in loop to iterate over the object's properties
+for (var key in object) {
+  //And then push the value of each property into the values array
+  values.push(object[key]);
+}
+
+return values;
+}
+
+ 
+
 /*
-I:
-O:
-C:
-E:*/
+I: Should take object 
+O: Return its values in an array 
+C: N/A
+E: N/A 
+*/
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
 
+//Now get all the keys of the object using Object.keys
+var keys = Object.keys(object);
+  
+//And join the keys into a single string separated by a space
+var keysString = keys.join(' ');
+
+//And return the resulting string
+return keysString;
+
+
+
 }
 
 /*
-I:
-O:
-C:
-E:*/
+I: Take an object 
+O: Return all its keys in a string each seperated with a space 
+C: N/A
+E: N/A 
+*/
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
     
+//Lets create an empty array to hold the string values
+var stringValues = [];
+  
+//Now use a for-in loop to iterate over the object's properties
+for (var key in object) {
+  // Check if the value is a string
+  if (typeof object[key] === 'string') {
+    //Now push the string value into the stringValues array
+    stringValues.push(object[key]);
+  }
+}
+
+//Almost done join the string values into a single string separated by a space
+var valuesString = stringValues.join(' ');
+
+//Lastly return the resulting string
+return valuesString;
+
+
 }
 /*
-I:
-O:
-C:
-E:*/
+I: Object 
+O: Return all its string values in a string each seperated with a space
+C: N/A
+E: N/A
+*/
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+     //Lets check if the collection is an array
+  if (Array.isArray(collection)) {
+    return "array";
+  } else {
+    return "object";
+  }
+
+
+
 }
 /*
-I:
-O:
+I: Should take one argument 
+O: Return an array if its an array and object if its an object 
 C:
 E:*/
 //////////////////////////////////////////////////////////////////////
@@ -53,8 +108,28 @@ E:*/
 
 function capitalizeWord(string) {
     
+ //Now start by getting the first letter and capitalize it
+ var firstLetter = string.charAt(0).toUpperCase();
+ 
+ //Now lets get the rest of the string
+  var restOfString = string.slice(1);
+  
+ //And then lets combine the capitalized first letter with the rest of the string
+  var capitalizedWord = firstLetter + restOfString;
+  
+  //FINALLY return the resulting string
+  return capitalizedWord; 
+ 
 }
 
+
+
+/*
+I: Should take a string of one word 
+O: Retrun the word with its first letter capitalized 
+C: N/A
+E: N/A
+/*
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -63,10 +138,11 @@ function capitalizeAllWords(string) {
     
 }
 /*
-I:
-O:
-C:
-E:*/
+I: Should take a string of words 
+O: Return a string with all the words capitlaized 
+C: 
+E:
+*/
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
