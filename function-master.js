@@ -129,13 +129,23 @@ I: Should take a string of one word
 O: Retrun the word with its first letter capitalized 
 C: N/A
 E: N/A
-/*
+*/
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
+        // Step 1: Split the string into an array of words
+        let words = string.split(' ');
+
+        // Step 2: Capitalize the first letter of each word
+        for (let i = 0; i < words.length; i++) {
+            // Get the first letter and capitalize it, then add the rest of the word
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+        }
     
+        // Step 3: Join the words back into a single string
+        return words.join(' ');
 }
 /*
 I: Should take a string of words 
@@ -148,11 +158,20 @@ E:
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
+  //Now get the name from the object
+  let name = object.name;
 
+  //And then Create the message with "Welcome" and the name
+  let message = "Welcome " + name.charAt(0).toUpperCase() + name.slice(1) + "!";
+
+  //Now return the message
+  return message;
 }
+
+
 /*
-I:
-O:
+I: Should take in an object with a name property 
+O: Return "'Welcome <Name>!'"
 C:
 E:*/
 //////////////////////////////////////////////////////////////////////
@@ -163,10 +182,12 @@ function profileInfo(object) {
 
 }
 /*
-I:
-O:
+I: An object with a name and species 
+O: Return name is a species 
 C:
-E:*/
+E:
+*/
+
 //////////////////////////////////////////////////////////////////////
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
